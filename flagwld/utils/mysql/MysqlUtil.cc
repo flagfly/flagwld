@@ -284,7 +284,9 @@ bool Mysql::execute(char const *format, ...)
   }
   va_end(ap);
 
+#ifndef NDEBUG
   std::cerr << query_string << std::endl;
+#endif
 
   return __query(query_string);
 }
